@@ -1,0 +1,22 @@
+MangaVault Desktop Windows third-party tools
+
+This release may include the following independently distributed command-line tools.
+They are executed as separate processes only to inspect or render a user-selected local
+comic file. MangaVault does not transmit local files to either project.
+
+7-Zip
+Copyright (c) 1999-2026 Igor Pavlov.
+License: GNU LGPL 2.1 or later, with the unRAR license restriction for RAR support.
+Source and license: https://www.7-zip.org/
+Bundled files: tools/7zip/7z.exe, tools/7zip/7z.dll, and tools/7zip/License.txt.
+
+Poppler
+Copyright (c) 2005-2026 The Poppler Developers and contributors.
+License: GPL-2.0-or-later. The complete license text and source are available from
+the Poppler project URL below.
+Source and license: https://poppler.freedesktop.org/
+Windows binary package source: https://github.com/oschwartz10612/poppler-windows
+Bundled files: tools/poppler/bin and tools/poppler/share.
+
+The release build script verifies the published SHA-256 digest of each downloaded
+upstream archive before copying these tools into the application bundle.

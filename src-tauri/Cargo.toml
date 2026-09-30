@@ -1,0 +1,50 @@
+[package]
+name = "mangavault-desktop"
+version = "1.1.0-rc.1"
+description = "Professional offline desktop manga library and reader."
+authors = ["MangaVault Contributors"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "mangavault_desktop"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "mangavault-desktop"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+aes = "0.8"
+blake3 = "1.5"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp", "avif"] }
+lopdf = "0.34"
+md-5 = "0.10"
+regex = "1.11"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+quick-xml = "0.36"
+rusqlite = { version = "0.32", features = ["backup", "bundled", "chrono"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = ["tray-icon", "protocol-asset"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-log = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-single-instance = "2"
+thiserror = "2"
+tokio = { version = "1", features = ["sync", "time"] }
+walkdir = "2"
+zip = { version = "2.2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempfile = "3.14"
+
+[features]
+default = []

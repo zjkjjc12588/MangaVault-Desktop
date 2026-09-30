@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MangaVault Desktop",
+  "version": "1.1.0-rc.1",
+  "identifier": "com.mangavault.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "MangaVault Desktop",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 980,
+        "minHeight": 680,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' asset: http://asset.localhost; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'",
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["$APPCACHE/reader-pages/**", "$APPCACHE/thumbnails/**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Entertainment",
+    "icon": ["icons/icon.ico", "icons/icon.png"],
+    "shortDescription": "Local-first manga library and reader.",
+    "longDescription": "MangaVault Desktop manages and reads local manga collections, with optional user-enabled JMComic metadata enrichment.",
+    "resources": {
+      "vendor/windows/tools": "tools",
+      "vendor/windows/THIRD_PARTY_NOTICES.txt": "THIRD_PARTY_NOTICES.txt"
+    },
+    "fileAssociations": [
+      {
+        "ext": ["cbz", "cbr", "zip", "rar", "7z", "pdf"],
+        "name": "MangaVault Comic Archive",
+        "description": "Comic archive readable by MangaVault Desktop"
+      }
+    ],
+    "createUpdaterArtifacts": false,
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "wix": {
+        "version": "1.0.100",
+        "upgradeCode": "95c5d5e5-3bee-58e3-b959-6a94a261cf74"
+      }
+    }
+  },
+  "plugins": {
+    "fs": {
+      "requireLiteralLeadingDot": false
+    }
+  }
+}

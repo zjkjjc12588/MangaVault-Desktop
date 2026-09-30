@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 214 24% 8%;
+  --foreground: 210 24% 94%;
+  --panel: 216 20% 12%;
+  --panel-muted: 215 18% 17%;
+  --border: 214 14% 24%;
+  --accent: 173 70% 42%;
+  --accent-text: 180 18% 8%;
+  --danger: 0 72% 54%;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+:root.light {
+  color-scheme: light;
+  --background: 210 25% 96%;
+  --foreground: 215 25% 10%;
+  --panel: 0 0% 100%;
+  --panel-muted: 210 22% 92%;
+  --border: 213 16% 78%;
+  --accent: 174 72% 34%;
+  --accent-text: 0 0% 100%;
+  --danger: 0 72% 45%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 800px;
+  min-height: 680px;
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.32);
+}
+
+.reader-scrollbar::-webkit-scrollbar,
+.thin-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.reader-scrollbar::-webkit-scrollbar-thumb,
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 999px;
+}
+
+.cover-grid,
+.virtuoso-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 16px;
+}
+
+.virtuoso-grid-list {
+  padding: 20px;
+}
+
+.cover-grid.grid-density-compact,
+.virtuoso-grid-list.grid-density-compact {
+  grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+  gap: 12px;
+}
+
+.cover-grid.grid-density-spacious,
+.virtuoso-grid-list.grid-density-spacious {
+  grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
+  gap: 20px;
+}
+
+.virtuoso-grid-item {
+  min-width: 0;
+}
+
+.recent-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.recent-grid-item {
+  min-width: 0;
+}

@@ -1,0 +1,12 @@
+{
+  "id": "local.metadata.example",
+  "name": "Local Metadata Example",
+  "version": "1.0.0",
+  "permissions": ["ReadMetadata"],
+  "contributions": [
+    {
+      "kind": "metadataProvider",
+      "target": "library"
+    }
+  ]
+}
